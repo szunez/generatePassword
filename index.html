@@ -9,20 +9,26 @@
 
 <body class="generatePassword">
     <div>
+        <h1>Complicated password generator</h1>
+    </div>
+    <div>
         <span style="font-size:20px">
             <ul>
-                Input phrase : 
-                <br><textarea id="inputPhrase" type="text" style="width: 600px; height:80;"></textarea><br>
+	            <h2 style="margin:10px;">Memorable phrase : </h2>
+	            <textarea id="inputPhrase" type="text" style="width: 600px; height:80;"></textarea><br>
                 <br><input id="flagForceNum" type="text"style="width: 40px">  Convert letters to numbers? [ 0 = no, 1 = once, -1 = all ]<br>
                 <br><input id="flagForceChar" type="text"style="width: 40px">  Convert letters to special characters? [ 0 = no, 1 = once, -1 = all ]<br>
-                <br>
-                <br>Output password : 
-                <br><output id="outputPassword" style="color:darkred; font-size:20px">
             </ul>
+            <h2>
+                 <ul>Generated password : 
+                    <br><output id="outputPassword" style="color:darkred; font-size:20px">
+                </ul>
+            </h2>
         </span>
     </div>
     <script>
-        console.log(generatePassword("This is a test of the emergency broadcasting system", "1", "1"));
+        <!-- commented out debug test -->
+        <!-- console.log(generatePassword("Somewhere over the rainbow way up high there is a land that I heard of once in a lullaby", "1", "1")); -->
         function run(){
             var inputPhraseObject = document.getElementById("inputPhrase").value;
             var inputFlagNumObject = document.getElementById("flagForceNum").value;
