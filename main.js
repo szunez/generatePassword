@@ -117,3 +117,13 @@ return replacementCharArray;
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
+function runGeneratePassword(generatePassword){
+  outputDataObject = generatePassword.call(
+    outputDataObject, 
+    "This is a test of the emergancy broadcasting system", 
+    "1", 
+    "-1"
+  );
+  document.getElementById("outputData").innerHTML = outputDataObject;
+}

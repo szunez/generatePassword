@@ -1,0 +1,35 @@
+/body {background-color:#636363;}
+
+input[type=text], textarea
+{
+    background-color: #BFBDBD;
+    border:solid 1px #BFBDBD;
+    color: blue;
+    padding-left:10px;
+    box-shadow: 2px 2px 0 #828181 inset;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+input[type=button]
+{
+    background-color: #1E1E1E;
+    color: #979797;
+    height: 24px;
+    width: 103px;
+    color: #bbbbbb;
+    text-transform:uppercase;
+    box-shadow:-1px 2px #6E6B6A inset;
+}
+
+input[type=button], input[type=text]
+{
+    border: 0;
+    border-radius:5px;
+    font-family: Sansation,Arial;
+}
+button {
+    color : green;
+    width : 600px;
+    height : 50px;
+    font-size : 30px;
+}

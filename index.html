@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="make more secure passwords from long memorable phrases">
+    <link rel="stylesheet" href="styles.css">
+	<title>Generate Password</title>
+    <script src="main.js"></script>
+</head>
+
+<body class="generatePassword">
+    <div>
+        <span style="font-size:20px">
+            <ul>
+                Input phrase : 
+                <br><textarea id="inputPhrase" type="text" style="width: 600px; height:80;"></textarea><br>
+                <br><input id="flagForceNum" type="text"style="width: 40px">  Convert letters to numbers? [ 0 = no, 1 = once, -1 = all ]<br>
+                <br><input id="flagForceChar" type="text"style="width: 40px">  Convert letters to special characters? [ 0 = no, 1 = once, -1 = all ]<br>
+                <br><button onclick="run()">Submit</button>
+                <br>
+                <br>Output password : 
+                <br><output id="outputPassword" style="color:darkred; font-size:20px">
+            </ul>
+        </span>
+    </div>
+    <script>
+        console.log(generatePassword("This is a test of the emergency broadcasting system", "1", "1"));
+        function run(){
+            var inputPhraseObject = document.getElementById("inputPhrase").value;
+            var inputFlagNumObject = document.getElementById("flagForceNum").value;
+            var inputFlagNCharObject = document.getElementById("flagForceChar").value;
+            var outputPasswordObject = generatePassword(
+                inputPhraseObject, 
+                inputFlagNumObject, 
+                inputFlagNCharObject
+            );
+        document.getElementById("outputPassword").innerHTML = outputPasswordObject;
+    }
+    </script>
+</body>
