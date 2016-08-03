@@ -15,7 +15,6 @@
                 <br><textarea id="inputPhrase" type="text" style="width: 600px; height:80;"></textarea><br>
                 <br><input id="flagForceNum" type="text"style="width: 40px">  Convert letters to numbers? [ 0 = no, 1 = once, -1 = all ]<br>
                 <br><input id="flagForceChar" type="text"style="width: 40px">  Convert letters to special characters? [ 0 = no, 1 = once, -1 = all ]<br>
-                <br><button onclick="run()">Submit</button>
                 <br>
                 <br>Output password : 
                 <br><output id="outputPassword" style="color:darkred; font-size:20px">
@@ -35,5 +34,8 @@
             );
         document.getElementById("outputPassword").innerHTML = outputPasswordObject;
     }
+    document.getElementById("inputPhrase").addEventListener("change", run, false);
+    document.getElementById("flagForceNum").addEventListener("change", run, false);
+    document.getElementById("flagForceChar").addEventListener("change", run, false);
     </script>
 </body>
