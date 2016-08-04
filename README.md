@@ -4,9 +4,13 @@
 
 To run this project:
 
+# For use in a web browser 
+![Screenshots](/img/web-screen.png?raw=true "Web used")
 1. download
 2. view index.html with a browser
 
+
 # For use in a Google Sheet 
+![Screenshots](/img/sheet-screen.png?raw=true "Google Sheet used")
 1. copy "js/main.js" into the Script Editor
 2. From a cell call the function with =generatePassword("My text string",-1,0), for example
