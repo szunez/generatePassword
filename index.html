@@ -12,12 +12,19 @@
         <h1>Complicated password generator</h1>
     </div>
     <div>
+        <form action="#" method="post" class="passwordForm" id="passwordForm">
         <span style="font-size:20px">
             <ul>
 	            <h2 style="margin:10px;">Memorable phrase : </h2>
 	            <textarea id="inputPhrase" type="text" style="width: 600px; height:80;"></textarea><br>
-                <br><input id="flagForceNum" type="text"style="width: 40px">  Convert letters to numbers? [ 0 = no, 1 = once, -1 = all ]<br>
-                <br><input id="flagForceChar" type="text"style="width: 40px">  Convert letters to special characters? [ 0 = no, 1 = once, -1 = all ]<br>
+                Convert letters to numbers?<br>
+                <input type="radio" id="convertNumber0" name="convertNumber" value="0">None
+                <input type="radio" id="convertNumber1" name="convertNumber" value="1">Once
+                <input type="radio" id="convertNumber2" name="convertNumber" value="-1">All
+                <br>Convert letters to special characters?<br>
+                <input type="radio" id="convertSpecial0" name="convertSpecial" value="0">None
+                <input type="radio" id="convertSpecial1" name="convertSpecial" value="1">Once
+                <input type="radio" id="convertSpecial2" name="convertSpecial" value="-1">All
             </ul>
             <h2>
                  <ul>Generated password : 
@@ -25,24 +32,29 @@
                 </ul>
             </h2>
         </span>
+        </form>
         <a href="https://github.com/szunez/generatePassword">Source code on <img src="img/GitHub-Mark-32px.png"></a>
     </div>
     <script>
         <!-- commented out debug test -->
         <!-- console.log(generatePassword("Somewhere over the rainbow way up high there is a land that I heard of once in a lullaby", "1", "1")); -->
         function run(){
-            var inputPhraseObject = document.getElementById("inputPhrase").value;
-            var inputFlagNumObject = document.getElementById("flagForceNum").value;
-            var inputFlagNCharObject = document.getElementById("flagForceChar").value;
+	        var inputPhraseObject = document.getElementById("inputPhrase").value;
+            var convertNumberObject = getRadioVal( document.getElementById('passwordForm'), 'convertNumber' );
+	        var convertSpecialObject = getRadioVal( document.getElementById('passwordForm'), 'convertSpecial' );
             var outputPasswordObject = generatePassword(
                 inputPhraseObject, 
-                inputFlagNumObject, 
-                inputFlagNCharObject
+                convertNumberObject, 
+                convertSpecialObject
             );
         document.getElementById("outputPassword").innerHTML = outputPasswordObject;
     }
     document.getElementById("inputPhrase").addEventListener("change", run, false);
-    document.getElementById("flagForceNum").addEventListener("change", run, false);
-    document.getElementById("flagForceChar").addEventListener("change", run, false);
+    document.getElementById("convertNumber0").addEventListener("change", run, false);
+    document.getElementById("convertNumber1").addEventListener("change", run, false);
+    document.getElementById("convertNumber2").addEventListener("change", run, false);
+    document.getElementById("convertSpecial0").addEventListener("change", run, false);
+    document.getElementById("convertSpecial1").addEventListener("change", run, false);
+    document.getElementById("convertSpecial2").addEventListener("change", run, false);
     </script>
 </body>
