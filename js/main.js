@@ -14,7 +14,6 @@ function generatePassword(inputPhrase, forceNumber, forceSpecial) {
   //var forceSpecial = -1; //debug values
   var phraseWords = inputPhrase.split(' ');
   var outputPassword = phraseWords[0].charAt(0);
-  
   for (var i = 1; i < phraseWords.length; i++) {
     var phraseWordsArray = replaceChar(phraseWords[i], forceSpecial, getReplaceCharArray);
     if (phraseWordsArray[1] == "found"){
@@ -44,7 +43,6 @@ function generatePassword(inputPhrase, forceNumber, forceSpecial) {
 }
 
 function replaceChar(inputValue, forceSpecial,replaceArray){
-  
   var output = [];
   var replacementMap = replaceArray();
   for (var ii = 0; ii < replacementMap.length; ii++) {
@@ -67,6 +65,7 @@ function replaceChar(inputValue, forceSpecial,replaceArray){
   var output = [[inputValue],[foundSpecialFlag]];
   return output;
 }
+
 function getReplaceNumArray(){
   var replacementNumArray = [["0","o","O"],
                             ["1","l","L"],
@@ -80,6 +79,7 @@ function getReplaceNumArray(){
                             ["9","p", "P"]];
   return replacementNumArray;
 }
+
 function getReplaceCharArray(){
 var replacementCharArray = [[" ", "space", "empty", "void", "null"],
                             ["!", "i", "I", "not"],
@@ -127,11 +127,11 @@ function runGeneratePassword(generatePassword){
   );
   document.getElementById("outputData").innerHTML = outputDataObject;
 }
+
 function getRadioVal(form, name) {
     var val;
     // get list of radio buttons with specified name
-    var radios = form.elements[name];
-    
+    var radios = form.elements[name]; 
     // loop through list of radio buttons
     for (var i=0, len=radios.length; i<len; i++) {
         if ( radios[i].checked ) { // radio checked?
